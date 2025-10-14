@@ -24,6 +24,6 @@
       "gridPos": { "h": 8, "w": 24, "x": 0, "y": 9 }
     }
   ],
-  "title": "Infrastructure Overview",
+  "title": "Infrastructure Metrics",
   "schemaVersion": 16
 }

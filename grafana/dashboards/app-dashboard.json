@@ -6,7 +6,7 @@
       "type": "graph",
       "targets": [
         {
-          "expr": "rate(http_request_total[1m])",
+          "expr": "rate(http_requests_total[1m])",
           "legendFormat": "{{handler}}"
         }
       ],
