@@ -1,0 +1,29 @@
+{
+  "annotations": { "list": [] },
+  "panels": [
+    {
+      "title": "Host CPU Usage (node_exporter)",
+      "type": "graph",
+      "targets": [
+        {
+          "expr": "100 - (avg by (instance) (irate(node_cpu_seconds_total{mode=\"idle\"}[5m])) * 100)",
+          "legendFormat": "{{instance}}"
+        }
+      ],
+      "gridPos": { "h": 8, "w": 24, "x": 0, "y": 0 }
+    },
+    {
+      "title": "Container CPU Usage (cAdvisor)",
+      "type": "graph",
+      "targets": [
+        {
+          "expr": "sum by (container_label_com_docker_swarm_service_name) (rate(container_cpu_usage_seconds_total[1m]))",
+          "legendFormat": "{{container_label_com_docker_swarm_service_name}}"
+        }
+      ],
+      "gridPos": { "h": 8, "w": 24, "x": 0, "y": 9 }
+    }
+  ],
+  "title": "Infrastructure Overview",
+  "schemaVersion": 16
+}
